@@ -24,14 +24,19 @@ function type() {
 
   if (!isDeleting && letter.length === currentText.length) {
     isDeleting = true;
-    typingSpeed = 1000; // pause before deleting
+    typingSpeed = 1000; 
   } else if (isDeleting && letter.length === 0) {
     isDeleting = false;
     count++;
-    typingSpeed = 500; // pause before typing new word
+    typingSpeed = 500;
   }
 
   setTimeout(type, typingSpeed);
 }
 
 document.addEventListener("DOMContentLoaded", type);
+
+window.onload = function () {
+  
+  window.scrollTo(0, 0);
+};
