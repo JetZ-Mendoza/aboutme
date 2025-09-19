@@ -3,173 +3,233 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>Jester's Portfolio</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #00ff88;
+      background-color: #0b0b0b;
+      color: #a0ff8a;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
     }
-
-    header {
-      background-color: #003300;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 2px solid #00ff88;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
+    a { text-decoration: none; color: #a0ff8a; }
+    a:hover { color: #55ff33; }
 
     nav {
-      margin-top: 10px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: rgba(0, 0, 0, 0.85);
+      border-bottom: 2px solid #55ff33;
+      z-index: 1000;
     }
-
-    nav a {
-      color: #00ff88;
-      margin: 0 15px;
-      text-decoration: none;
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 1rem;
+    }
+    nav ul li {
+      margin: 0 1.5rem;
+    }
+    nav ul li a {
+      font-size: 1.1rem;
       font-weight: bold;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: url('[path to hero background image]') no-repeat center center/cover;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+    }
+    .hero-content {
+      position: relative;
+      text-align: center;
+      color: #a0ff8a;
+      z-index: 1;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+    .hero-content p {
+      font-size: 1.5rem;
     }
 
     section {
-      padding: 40px;
-      max-width: 900px;
+      padding: 80px 20px;
+      max-width: 1000px;
       margin: auto;
     }
-
-    h2 {
-      border-bottom: 2px solid #00ff88;
+    section h2 {
+      font-size: 2rem;
+      border-bottom: 3px solid #55ff33;
       padding-bottom: 10px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: #55ff33;
     }
 
-    .card {
-      background-color: #002200;
-      padding: 20px;
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .project-card {
+      background: #1a1a1a;
+      border: 2px solid #55ff33;
       border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 10px #00ff88;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .project-card img {
+      width: 100%;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .project-card:hover img {
+      transform: scale(1.05);
+    }
+    .project-card .card-content {
+      padding: 20px;
+    }
+    .project-card .card-content h3 {
+      margin-bottom: 10px;
+      color: #a0ff8a;
+    }
+    .project-card .card-content p {
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+    .project-card .card-content a {
+      border: 1px solid #55ff33;
+      padding: 8px 15px;
+      border-radius: 5px;
+      display: inline-block;
+      transition: background 0.3s, color 0.3s;
+    }
+    .project-card .card-content a:hover {
+      background: #55ff33;
+      color: #0b0b0b;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      background-color: #003300;
-      border-top: 2px solid #00ff88;
+      padding: 40px 20px;
+      background: #000;
+      border-top: 2px solid #55ff33;
+      margin-top: 40px;
+    }
+    footer p {
+      color: #777;
     }
 
-    ul {
-      list-style: square;
+    @media (max-width: 600px) {
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+      nav ul li {
+        margin: 0 0.8rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Mark Jester C. Mendoza</h1>
-    <p>Computer Engineer Student</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-    </nav>
-  </header>
+  <nav>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <section id="about">
+  <section id="hero" class="hero">
+    <div class="hero-content" data-aos="zoom-in">
+      <h1>Mark Jester C. Mendoza</h1>
+      <p>Computer Engineer Student</p>
+    </div>
+  </section>
+
+  <section id="about" data-aos="fade-up">
     <h2>About Me</h2>
-    <div class="card">
-      <p>I’m a computer engineering undergrad student, and I enjoy working with both hardware and software. I like learning how things work under the hood, whether it’s building systems, coding projects, or just tinkering around with new tech. I’m always excited to pick up new skills and work on interesting ideas with others. </p>
-    </div>
+    <p>I’m a computer engineering undergrad student, and I enjoy working with both hardware and software. I like learning how things work under the hood, whether it’s building systems, coding projects, or just tinkering around with new tech. I’m always excited to pick up new skills and work on interesting ideas with others.</p>
   </section>
 
-  <section id="skills">
+  <section id="skills" data-aos="fade-right">
     <h2>Skills</h2>
-    <div class="card">
-      <ul>
-        <li>Embedded Systems</li>
-        <li>SQL</li>
-        <li>Networking</li>
-        <li>JavaFX</li>
-        <li>Python</li>
-      </ul>
-    </div>
+    <ul>
+      <li data-aos="fade-right" data-aos-delay="100">Embedded Systems</li>
+      <li data-aos="fade-right" data-aos-delay="200">SQL</li>
+      <li data-aos="fade-right" data-aos-delay="300">Networking</li>
+      <li data-aos="fade-right" data-aos-delay="400">JavaFX</li>
+      <li data-aos="fade-right" data-aos-delay="500">Python</li>
+    </ul>
   </section>
 
-  <section id="projects">
+  <section id="projects" data-aos="fade-up">
     <h2>Projects</h2>
-    <div class="card">
-      <h3>Archer Executive Bank (AEX Bank) [Academic Project]</h3>
-      <img src="P1.gif" alt="Project screenshot" style="max-width:100%; border-radius:8px; margin:10px 0;">
-      <p>An online banking application that is able to view, deposit, and withraw money. Users are able to login to their account using their credentials. It provides real-time updates on transactions and account activity</p>
-      <a href="[Project Link]" style="color:#00ff88;">View Project</a>
-    </div>
-    <div class="card">
-      <h3>MCT Hotel Booking</h3>
-      <img src="P3.png" alt="Project screenshot" style="max-width:100%; border-radius:8px; margin:10px 0;">
-      <p>An application that enables the user to book a room and calculates the fee automatically when checking out. The cashier can select their clients desired room type, check-in and check-out dates, and any additional services. The system computes the total cost based on the duration of stay, room rates, and extra charges. Payments can be processed through various methods, including credit cards, digital wallets, and bank transfers. The application provides booking confirmations and receipts for transparency.</p>
-      <a href="[Project Link]" style="color:#00ff88;">View Project</a>
-    </div>
-    
-  </section>
+    <div class="projects-grid">
+      <div class="project-card" data-aos="flip-left">
+        <img src="P1.gif" alt="Project 1 screenshot">
+        <div class="card-content">
+          <h3>Archer Executive Bank (AEX Bank) [Academic Project]</h3>
+          <p>An online banking application that is able to view, deposit, and withraw money. Users are able to login to their account using their credentials. It provides real-time updates on transactions and account activity</p>
+        </div>
+      </div>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="card">
-      <h3>Work Immersion - Creotec Philippines Inc.</h3>
-      <p>February – March 2022 </p>
-    </div>
-    <div class="card">
-      <h3>Assistant Vice President for Logistics Committee - ACCESS DLSU</h3>
-      <p>November 2024 - August 2025</p>
-      <ul>
-        <li>Ignite: Bytes & Boards 2025</li>
-        <li>Dyson x DLSU: Elevate Seminar</li>
-		    <li>Ctrl + Alt + Dispose</li>
-        <li>ACCESS the Matrix: AIoT</li>
-        <li>ACCESS Under the Sea</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Junior Officer for Operations Documentation - DLSU Badminton Society</h3>
-      <p>October 2024 - August 2025</p>
+      <div class="project-card" data-aos="flip-left" data-aos-delay="200">
+        <img src="P3.png" alt="Project 2 screenshot">
+        <div class="card-content">
+          <h3>MCT Hotel Booking</h3>
+          <p>An application that enables the user to book a room and calculates the fee automatically when checking out. The cashier can select their clients desired room type, check-in and check-out dates, and any additional services. The system computes the total cost based on the duration of stay, room rates, and extra charges. Payments can be processed through various methods, including credit cards, digital wallets, and bank transfers. The application provides booking confirmations and receipts for transparency.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <div class="card">
-      <h3>BS Computer Engineering - De La Salle University</h3>
-      <p>September 2022 - Present</p>
-      
-    </div>
-    <div class="card">
-      <h3>STEM - Mapua University Makati Campus</h3>
-      <p>July 2020 - July 2022</p>
-      <p>Honors</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-      <p>Email: markjestercm@gmail.com</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/mark-jester-mendoza-a9413033a/" style="color:#00ff88;">Mark Jester Mendoza</a></p>
-      <p>GitHub: <a href="https://github.com/JetZ-Mendoza" style="color:#00ff88;">JetZ-Mendoza</a></p>
-      <p>Phone: 0927 533 3539</p>
-    </div>
+  <section id="contact" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <p>Email: markjestercm@gmail.com</p>
+    <p>LinkedIn: <a href="[Your LinkedIn URL]" target="_blank">Mark Jester Mendoza</a></p>
+    <p>GitHub: <a href="https://github.com/JetZ-Mendoza/" target="_blank">JetZ Mendoza</a></p>
   </section>
 
   <footer>
-    <p>&copy; Jester 2025</p>
+    <p>&copy; JM Mendoza — All rights reserved.</p>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 </html>
