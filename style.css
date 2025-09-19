@@ -226,3 +226,39 @@ footer p {
   transform: scale(1.2);
   filter: brightness(0) invert(1) drop-shadow(0 0 15px #55ff33);
 }
+
+.proceed-section {
+  text-align: center;
+  margin: 60px 0 30px 0; /* space before footer */
+}
+
+.proceed-button {
+  display: inline-block;
+  padding: 14px 32px;
+  border: 2px solid #55ff33;
+  border-radius: 50px;
+  color: #a0ff8a;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 15px #55ff33, inset 0 0 8px #55ff33;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.proceed-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #55ff33, inset 0 0 12px #55ff33;
+  color: #55ff33;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}

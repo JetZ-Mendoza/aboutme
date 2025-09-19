@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jester Portfolio</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  
+
+  <section id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>I’m a computer engineering undergrad student, and I enjoy working with both hardware and software. I like learning how things work under the hood, whether it’s building systems, coding projects, or just tinkering around with new tech. I’m always excited to pick up new skills and work on interesting ideas with others.</p>
+  </section>
+
+  <section id="skills" data-aos="fade-right">
+    <h2>Skills</h2>
+    <ul>
+      <li data-aos="fade-right" data-aos-delay="100">Embedded Systems</li>
+      <li data-aos="fade-right" data-aos-delay="200">SQL</li>
+      <li data-aos="fade-right" data-aos-delay="300">Networking</li>
+      <li data-aos="fade-right" data-aos-delay="400">JavaFX</li>
+      <li data-aos="fade-right" data-aos-delay="500">Python</li>
+    </ul>
+  </section>
+
+  <section id="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card" data-aos="flip-left">
+        <img src="P1.gif" alt="Project 1 screenshot">
+        <div class="card-content">
+          <h3>Archer Executive Bank (AEX Bank) [Academic Project]</h3>
+          <p>An online banking application that is able to view, deposit, and withraw money. Users are able to login to their account using their credentials. It provides real-time updates on transactions and account activity</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="flip-left" data-aos-delay="200">
+        <img src="P3.png" alt="Project 2 screenshot">
+        <div class="card-content">
+          <h3>MCT Hotel Booking</h3>
+          <p>An application that enables the user to book a room and calculates the fee automatically when checking out. The cashier can select their clients desired room type, check-in and check-out dates, and any additional services. The system computes the total cost based on the duration of stay, room rates, and extra charges. Payments can be processed through various methods, including credit cards, digital wallets, and bank transfers. The application provides booking confirmations and receipts for transparency.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" data-aos="fade-up">
+    <h2>Experience</h2>
+    <div class="experience-card">
+      <h3>Work Immersion - Creotec Philippines Inc.</h3>
+      <p>February – March 2022 </p>
+    </div>
+    <div class="experience-card">
+      <h3>Assistant Vice President for Logistics Committee - ACCESS DLSU</h3>
+      <p>November 2024 - August 2025</p>
+      <ul>
+        <li>Ignite: Bytes & Boards 2025</li>
+        <li>Dyson x DLSU: Elevate Seminar</li>
+		    <li>Ctrl + Alt + Dispose</li>
+        <li>ACCESS the Matrix: AIoT</li>
+        <li>ACCESS Under the Sea</li>
+      </ul>
+    </div>
+    <div class="experience-card">
+      <h3>Junior Officer for Operations Documentation - DLSU Badminton Society</h3>
+      <p>October 2024 - August 2025</p>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="education-card">
+      <h3>BS Computer Engineering - De La Salle University</h3>
+      <p>September 2022 - Present</p>
+      
+    </div>
+    <div class="education-card">
+      <h3>STEM - Mapua University Makati Campus</h3>
+      <p>July 2020 - July 2022</p>
+      <p>Honors</p>
+    </div>
+  </section>
+
+  <section id="contact">
+  <h2>Contact</h2>
+  <div class="contact-icons">
+    <a href="markjestercm@gmail.com" target="_blank">
+      <img src="email.png" alt="Email">
+    </a>
+    <a href="https://github.com/JetZ-Mendoza/" target="_blank">
+      <img src="github.png" alt="GitHub">
+    </a>
+    <a href="https://www.linkedin.com/in/mark-jester-mendoza-a9413033a/" target="_blank">
+      <img src="linkedin.png" alt="LinkedIn">
+    </a>
+  </div>
+  </section>
+  
+
+  <footer>
+    <p>&copy; JM Mendoza — All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

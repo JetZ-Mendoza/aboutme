@@ -36,7 +36,3 @@ function type() {
 
 document.addEventListener("DOMContentLoaded", type);
 
-window.onload = function () {
-  
-  window.scrollTo(0, 0);
-};
