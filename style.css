@@ -167,6 +167,29 @@ footer p {
 }
 
 
+.typing-wrapper {
+  display: inline-block;
+  min-width: 200px;   /* 👈 reserve space for your longest word */
+  text-align: left;
+}
+
+#typing {
+  border-right: 2px solid #55ff33;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #a0ff8a;
+  font-weight: bold;
+  font-size: 1.2em;
+  animation: blink 0.7s step-end infinite;
+}
+
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
 
 @media (max-width: 600px) {
   .hero-content h1 {
