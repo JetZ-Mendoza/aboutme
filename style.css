@@ -253,7 +253,6 @@ footer p {
   color: #55ff33;
 }
 
-/* Floating animation */
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -262,3 +261,4 @@ footer p {
     transform: translateY(-8px);
   }
 }
+
